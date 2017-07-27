@@ -1,0 +1,22 @@
+[user]
+    name = ashanaakh
+	email = ashanaakh@gmail.com
+[core]
+	editor = vim
+[color]
+	ui = true
+[alias]
+    co = checkout
+    s = status
+    st = status
+    f = fetch
+    r = rebase
+    rb = rebase origin/master
+    rib = rebase -i origin/master
+    ps = push
+    pg = push origin HEAD:refs/for/master
+    ap = apply
+    d = diff
+    dnc = diff --no-color
+    b = branch
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
