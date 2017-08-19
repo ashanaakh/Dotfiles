@@ -9,13 +9,13 @@ module.exports = {
 
     // font family with optional fallbacks
     // 'Droid Sans Mono for Powerline
-    fontFamily: '"Meslo LG L DZ for Powerline", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
+    cursorColor: 'skyblue',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
-    cursorShape: 'UNDERLINE',
+    cursorShape: 'BLOCK',
 
     // set to true for blinking cursor
     cursorBlink: false,
@@ -24,11 +24,13 @@ module.exports = {
     foregroundColor: '#fff',
 
     // terminal background color
-    backgroundColor: '#000',
+    backgroundColor: '#001',
 
     // border color (window, tabs)
-    borderColor: '#333',
-
+   hyperBorder: {
+     borderColors: ['skyblue', 'blue'],
+     borderWidth: '4px'
+   },
     // custom css to embed in the main window
     css: '',
 
@@ -106,11 +108,11 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
 
-   plugins: ["hyper-dracula",
-            "hypercwd",
-            "hyperterm-paste",
-            "hyperterm-close-on-left",
-            "hyper-statusline" ],
+   plugins: ["hypercwd",
+             "hyperborder",
+             "hyperterm-paste",
+             "hyperterm-close-on-left",
+             "hyper-statusline" ],
 
   // Open new tabs with the same directory as your current tab.
   // in development, you can create a directory under

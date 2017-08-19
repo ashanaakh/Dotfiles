@@ -6,7 +6,7 @@ echo $CWD
 rm -rf $HOME/{.vimrc,.vim}
 mkdir -p $HOME/.vim/colors
 
-wget https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim -P $HOME/.vim/colors
+wget https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim -P $HOME/.vim/colors
 git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 
 ln -s $CWD/vimrc $HOME/.vimrc
