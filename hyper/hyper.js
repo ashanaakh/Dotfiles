@@ -9,7 +9,7 @@ module.exports = {
 
     // font family with optional fallbacks
     // 'Droid Sans Mono for Powerline
-    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    //fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'skyblue',

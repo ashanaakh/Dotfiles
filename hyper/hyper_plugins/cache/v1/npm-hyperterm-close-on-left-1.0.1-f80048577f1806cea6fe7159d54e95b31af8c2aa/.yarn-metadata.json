@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyperterm-close-on-left/-/hyperterm-close-on-left-1.0.1.tgz#f80048577f1806cea6fe7159d54e95b31af8c2aa",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyperterm-close-on-left/-/hyperterm-close-on-left-1.0.1.tgz",
+    "hash": "f80048577f1806cea6fe7159d54e95b31af8c2aa",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "f80048577f1806cea6fe7159d54e95b31af8c2aa"
+}
