@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hypercwd/-/hypercwd-1.1.1.tgz#037a3315d52120fd49f719c4cc6f3cda40bb9acd",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hypercwd/-/hypercwd-1.1.1.tgz",
+    "hash": "037a3315d52120fd49f719c4cc6f3cda40bb9acd",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "037a3315d52120fd49f719c4cc6f3cda40bb9acd"
+}

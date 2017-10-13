@@ -1,22 +1,89 @@
 [user]
-    name = ashanaakh
-    email = ashanaakh@gmail.com
+	name = Ali Shanaakh
+	email = ashanaakh@gmail.com
+
 [core]
 	editor = vim
+
 [color]
 	ui = true
+
+[web]
+	browser = google-chrome
+
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+
 [alias]
-    co = checkout
-    s = status
-    st = status
-    f = fetch
-    r = rebase
-    rb = rebase origin/master
-    rib = rebase -i origin/master
-    ps = push
-    pg = push origin HEAD:refs/for/master
-    ap = apply
-    d = diff
-    dnc = diff --no-color
-    b = branch
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  # Gerrit
+  psg = push origin HEAD:refs/for/master
+  # Github
+	st = status
+	sa = stash apply
+	sc = stash clear
+	sd = stash drop
+	sl = stash list
+	sp = stash pop
+	ss = stash save
+	d = diff
+	ds = diff --staged
+#	dk = diff --check
+#	dck = diff --cached --check
+	c = commit
+	ca = commit -a
+	cm = commit -m
+	cam = commit -am
+	cd = commit --amend
+#	cad = commit -a --amend
+	a = add .
+	ap = apply
+#	as = apply --stat
+#	ac = apply --check
+	l = log --oneline
+	lg = log --oneline --graph
+	co = checkout
+	cob = checkout -b
+	b = branch
+#	ba = branch -a
+#	bd = branch -d
+#	br = branch -r
+	f = fetch
+#	fp = format-patch
+#	fk = fsck
+	m = merge
+	ps = push
+	pl = pull
+#	pb = pull --rebase
+#	pr = prune -v
+#	psf = push -f
+#	psu = push -u
+	pso = push origin
+#	plo = pull origin
+	pbo = pull --rebase origin
+#	psfo = push -f origin
+	psuo = push -u origin
+	r = remote
+	rb = rebase
+	re = reset
+	reh = reset --hard
+	rem = reset --mixed
+	res = reset --soft
+	rehh = reset --hard HEAD
+	resh = reset --soft HEAD
+	rv = remote -v
+#	rs = remote show
+#  rso = remote show origin

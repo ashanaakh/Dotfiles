@@ -25,7 +25,6 @@ set smartindent
 set expandtab
 set tabstop=2
 set shiftwidth=2
-set mouse=a
 
 set splitright
 set splitbelow
@@ -81,10 +80,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 map <Leader> <Plug>(easymotion-prefix)
 map <C-n> :NERDTreeToggle<CR>

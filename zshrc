@@ -16,14 +16,13 @@ ZSH_THEME="hyperzsh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(rails git ruby)
+plugins=(zsh-syntax-highlighting zsh-completions git docker kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 export PATH=$HOME/.gem/ruby/2.4.0/bin/:$PATH
-
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -45,3 +44,17 @@ export PATH=$HOME/.gem/ruby/2.4.0/bin/:$PATH
 # For a full list of active aliases, run `alias`.
 
 # Example aliases
+
+alias tf=terraform
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/work/gitius/bin"
+# Environment Variables
+USER_NAME="Ali Shanaakh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ashanaakh/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/ashanaakh/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ashanaakh/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/ashanaakh/google-cloud-sdk/completion.zsh.inc'; fi
