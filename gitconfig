@@ -12,78 +12,64 @@
 	browser = google-chrome
 
 [color "branch"]
-	current = yellow bold
-	local = green bold
-	remote = cyan bold
-
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-
-[color "status"]
-	added = green bold
-	changed = yellow bold
-	untracked = red bold
+	current = yellow
+	local = green
+	remote = cyan
 
 [alias]
-  # Gerrit
-  psg = push origin HEAD:refs/for/master
-  # Github
 	st = status
+  ap = apply
+  co = checkout
+  b = branch
+	f = fetch
+	m = merge
+	ps = push
+	pl = pull
+  r = remote
+	rb = rebase
+	re = reset
+  d = diff
+  a = add
+
+  # stash
 	sa = stash apply
 	sc = stash clear
 	sd = stash drop
 	sl = stash list
 	sp = stash pop
 	ss = stash save
-	d = diff
+
+  # diff
 	ds = diff --staged
-#	dk = diff --check
-#	dck = diff --cached --check
+
+  # commit
 	c = commit
-	ca = commit -a
 	cm = commit -m
-	cam = commit -am
 	cd = commit --amend
-#	cad = commit -a --amend
-	a = add .
-	ap = apply
-#	as = apply --stat
-#	ac = apply --check
+
+  # add
+	aa = add --all
+
+  # log
 	l = log --oneline
 	lg = log --oneline --graph
-	co = checkout
+
+  # checkout
 	cob = checkout -b
-	b = branch
-#	ba = branch -a
-#	bd = branch -d
-#	br = branch -r
-	f = fetch
-#	fp = format-patch
-#	fk = fsck
-	m = merge
-	ps = push
-	pl = pull
-#	pb = pull --rebase
-#	pr = prune -v
-#	psf = push -f
-#	psu = push -u
-	pso = push origin
-#	plo = pull origin
+
+  # push
+  pso = push origin
+  psuo = push -u origin
+
+  # pull
 	pbo = pull --rebase origin
-#	psfo = push -f origin
-	psuo = push -u origin
-	r = remote
-	rb = rebase
-	re = reset
+
+  # reset
 	reh = reset --hard
 	rem = reset --mixed
 	res = reset --soft
 	rehh = reset --hard HEAD
 	resh = reset --soft HEAD
-	rv = remote -v
-#	rs = remote show
-#  rso = remote show origin
+
+  # remote
+  rv = remote -v

@@ -1,0 +1,23 @@
+# ------------------------------------
+# Kubernetes alias and function
+# ------------------------------------
+
+alias kc='kubectl'
+alias kclf='kubectl logs --tail=200  -f'
+alias kcgs='kubectl get service -o wide'
+alias kcgd='kubectl get deployment -o wide'
+alias kcgp='kubectl get pod -o wide'
+alias kcgn='kubectl get node -o wide'
+alias kcdp='kubectl describe pod'
+alias kcds='kubectl describe service'
+alias kcdd='kubectl describe deployment'
+alias kcdf='kubectl delete -f'
+alias kcaf='kubectl apply -f'
+alias kcci='kubectl cluster-info'
+
+function kcfp() { kubectl get pod -o wide| grep $@; }
+function kcfs() { kubectl get service -o wide| grep $@; }
+function kcfd() { kubectl get deployment -o wide | grep $@; }
+function kcssh() { ssh -A core@$(kubectl get node -o wide | grep $@ | awk '{ print $4}'); }
+function kcxsh() { kubectl exec -ti $@ sh; }
+function kcxbash() { kubectl exec -ti $@ bash; }
