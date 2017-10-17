@@ -11,10 +11,10 @@
 [web]
 	browser = google-chrome
 
-[color "branch"]
-	current = yellow
-	local = green
-	remote = cyan
+#[color "branch"]
+#	current = yellow
+#	local = green
+#	remote = cyan
 
 [alias]
 	st = status

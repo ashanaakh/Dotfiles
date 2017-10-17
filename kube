@@ -3,6 +3,7 @@
 # ------------------------------------
 
 alias kc='kubectl'
+alias kccf='kubectl create -f'
 alias kclf='kubectl logs --tail=200  -f'
 alias kcgs='kubectl get service -o wide'
 alias kcgd='kubectl get deployment -o wide'
