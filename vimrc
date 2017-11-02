@@ -4,11 +4,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
+" Plugin 'kien/rainbow_parentheses.vim'
+" Plugin 'tomtom/tcomment_vim'
+Plugin 'dracula/vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'ap/vim-css-color'
-Plugin 'eaymotion/vim-easymotion'
 Plugin 'itchyny/lightline.vim'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
@@ -16,10 +18,25 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tpope/vim-surround'
+Plugin 'gregsexton/matchtag'
 
 call vundle#end()            " required
 
 filetype plugin indent on    " required
+
+set hlsearch
+
+" Make Vim more useful
+set nocompatible
+" " Use the OS clipboard by default (on versions compiled with `+clipboard`)
+set clipboard=unnamed"
+
+" Highlight current line
+set cursorline
+
+" Respect modeline in files
+set modeline
+set modelines=4
 
 set smartindent
 set expandtab
@@ -48,11 +65,11 @@ let g:ctrlp_map = '<c-p>'
 " Theme
 "
 
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 syntax enable
-set background=dark
-colorscheme solarized
-
+"set background=dark
+"colorscheme solarized
+color dracula
 "
 " Lightline
 "

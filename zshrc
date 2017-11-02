@@ -1,14 +1,15 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+
 ZSH_THEME="robbyrussell"
 
-plugins=(zsh-syntax-highlighting zsh-completions git docker)
+plugins=(zsh-syntax-highlighting zsh-completions git docker kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
 # path
 export PATH=$HOME/.gem/ruby/2.4.0/bin/:$PATH
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH=$HOME/.bin/:$PATH
 
 # default editor
 export EDITOR='vim'
@@ -24,5 +25,7 @@ source $DOTFILES/aliases
 
 # gcloud cli
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
+# rbenv
+eval "$(rbenv init -)"
