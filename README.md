@@ -1,33 +1,15 @@
-# D O T F I L E S
-My configurations __include:__
-* vim
-* zsh
-* git
+# Dotfiles
+> Configuration files for macOS and arch linux systems
 
-### About
+## Installation
 
-* `gitconfig` inspired by [HeliosTechnologies](https://github.com/helios-technologies)
-* `hyper.js` is a light configuration for awesome hyper terminal
-
-#### H Y P E R Z S H
-
-[@hyperzsh](https://github.com/tylerreckart/hyperzsh) on GitHub.
-
-
+### Mac OS
 ```shell
-ZSH_THEME="hyperzsh"
+$ git clone -b macos https://github.com/ashanaakh/dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles && ./install.sh
 ```
-
-### Installation
-
-#### `zshrc` and `vimrc` are compatible for both MacOS and Linux systems
-
-To install configuration for `vim`, `zsh` and `git`:
-
+### Arch Linux
 ```shell
-git clone https://github.com/ashanaakh/dotfiles.git $HOME/.dotfiles
-
-cd $HOME/.dotfiles  && ./install.sh
-
-source $HOME/zshrc
+$ git clone -b arch-linux https://github.com/ashanaakh/dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles && ./install.sh
 ```
