@@ -4,7 +4,6 @@
 
 [core]
 	editor = vim
-	excludesfile = /Users/ashanaakh/.gitignore
 
 [color]
 	ui = true
@@ -12,65 +11,20 @@
 [web]
 	browser = google-chrome
 
-#[color "branch"]
-#	current = yellow
-#	local = green
-#	remote = cyan
-
 [alias]
 	st = status
-  ap = apply
-  co = checkout
-  b = branch
+	ap = apply
+	co = checkout
+	b = branch
 	f = fetch
-	m = merge
 	ps = push
 	pl = pull
-  r = remote
+	r = remote
 	rb = rebase
 	re = reset
-  d = diff
-  a = add
-
-  # stash
-	sa = stash apply
-	sc = stash clear
-	sd = stash drop
-	sl = stash list
-	sp = stash pop
-	ss = stash save
-
-  # diff
+	d = diff
+	a = add
 	ds = diff --staged
-
-  # commit
 	c = commit
-	cm = commit -m
-	cd = commit --amend
-
-  # add
-	aa = add --all
-
-  # log
 	l = log --oneline
 	lg = log --oneline --graph
-
-  # checkout
-	cob = checkout -b
-
-  # push
-  pso = push origin
-  psuo = push -u origin
-
-  # pull
-	pbo = pull --rebase origin
-
-  # reset
-	reh = reset --hard
-	rem = reset --mixed
-	res = reset --soft
-	rehh = reset --hard HEAD
-	resh = reset --soft HEAD
-
-  # remote
-  rv = remote -v

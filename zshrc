@@ -1,31 +1,57 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
 ZSH_THEME="robbyrussell"
 
-plugins=(zsh-syntax-highlighting zsh-completions git docker kubectl)
+plugins=(zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# path
-export PATH=$HOME/.gem/ruby/2.4.0/bin/:$PATH
-export PATH=$HOME/.bin/:$PATH
+# Path
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
-# default editor
-export EDITOR='vim'
+# Default editor
+export EDITOR=vim
+export GOPATH=~/go
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# env
+# ENV
 DOTFILES=$HOME/.dotfiles
 
-# aliases
-source $DOTFILES/aliases
+# Aliases
+alias kc="kubectl"
 
-# gcloud cli
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+# Updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
+  source "$HOME/google-cloud-sdk/path.zsh.inc";
+fi
 
-# rbenv
-eval "$(rbenv init -)"
+# Enables shell command completion for gcloud.
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
+  source "$HOME/google-cloud-sdk/completion.zsh.inc";
+fi
+
+# Add Kite binary to PATH to use it like gem
+export PATH="$HOME/work/kite/bin:$PATH"
+export PATH="$HOME/Downloads/RubyMine-2017.3.1/bin:$PATH"
+
+# k8s
+source <(kubectl completion zsh)
+source <(helm completion zsh)
+# source <(terraform completion zsh)
+
+# export VAULT_ADDR=https://vault.bloomon.io
+# export VAULT_ADDR=https://vault.helioscloud.com
+
+# Terraform completion
+autoload -U +X bashcompinit && bashcompinit
+complete -C /usr/local/bin/terraform terraform
+
+# For Termite `terminal with currenct directory` keybilling
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_osc7
+fi
+
