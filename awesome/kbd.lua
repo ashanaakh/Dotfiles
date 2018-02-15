@@ -4,7 +4,12 @@ local wibox = require("wibox")
 
 kbdcfg = {}
 kbdcfg.cmd = "setxkbmap"
-kbdcfg.layout = { { "us", "" , "US" }, { "ua", "" , "UA" }, { "ru", "" , "RU" } }
+kbdcfg.layout = {
+  { "US", "" , "US" },
+  { "UA", "" , "UA" },
+  { "RU", "" , "RU" }
+}
+
 kbdcfg.current = 1  -- us is our default layout
 kbdcfg.widget = wibox.widget.textbox()
 kbdcfg.widget:set_text(" " .. kbdcfg.layout[kbdcfg.current][3] .. " ")

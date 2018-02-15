@@ -7,7 +7,7 @@ theme.wallpaper = themes_path .. "images/wallpaper.jpg"
 -- }}}
 
 -- {{{ Styles
-theme.font = "Roboto 12"
+theme.font = "Roboto 20"
 
 -- {{{ Colors
 theme.fg_normal  = "#DCDCCC"

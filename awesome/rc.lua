@@ -343,23 +343,7 @@ awful.rules.rules = {
         gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 5)
       end
     end
-  },
-  {
-    rule = { instance = 'chromium' },
-    properties = { screen = 2, tag = '1-[WEB]' }
-  },
-  -- {
-    -- rule = { instance = 'slack' },
-    -- properties = { screen = 2, tag = '3-[LOG]' }
-  -- },
-  {
-    rule = { instance = 'termite' },
-    properties = { screen = 2 }
-  },
-  {
-    rule = { instance = 'telegram-desktop' },
-    properties = { screen = 2, tag = '2-[WORK]' }
-  },
+  }
 }
 
 -- {{{ Signals

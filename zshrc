@@ -2,17 +2,22 @@
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
-plugins=(zsh-syntax-highlighting)
+plugins=(zsh-syntax-highlighting git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Path
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+# Golang environment variables
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
+
+# PATH
+PATH="$HOME/.rbenv/bin:$PATH"
+PATH="/home/ali/.rbenv/shims:$PATH"
+#PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+PATH="$GOBIN:$PATH"
 
 # Default editor
 export EDITOR=vim
-export GOPATH=~/go
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -35,12 +40,11 @@ fi
 
 # Add Kite binary to PATH to use it like gem
 export PATH="$HOME/work/kite/bin:$PATH"
-export PATH="$HOME/Downloads/RubyMine-2017.3.1/bin:$PATH"
+export PATH="$HOME/downloads/RubyMine-2017.3.1/bin:$PATH"
 
-# k8s
+# Completitions
 source <(kubectl completion zsh)
 source <(helm completion zsh)
-# source <(terraform completion zsh)
 
 # export VAULT_ADDR=https://vault.bloomon.io
 # export VAULT_ADDR=https://vault.helioscloud.com
@@ -54,4 +58,3 @@ if [[ $TERM == xterm-termite ]]; then
   . /etc/profile.d/vte.sh
   __vte_osc7
 fi
-
