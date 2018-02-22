@@ -1,5 +1,5 @@
 [options]
-font = DejaVu Sans Mono 22
+font = DejaVu Sans Mono 26
 allow_bold = true
 
 browser = xdg-open

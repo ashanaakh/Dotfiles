@@ -6,7 +6,7 @@ local naughty = require('naughty')
 local menubar = require('menubar')
 require('awful.autofocus')
 
-local tag_history_file = '/home/ali/.local/share/awesome/tag_history'
+local tag_history_file = os.getenv('HOME') .. '/.local/share/awesome/tag_history'
 local tag_history = { io.open(tag_history_file, 'r'):read():match('([1-9]) ([1-9])') }
 
 awful.util.spawn('nitrogen --restore')
@@ -52,13 +52,14 @@ end
 -- }}}
 
 -- {{{ Variable definitions
-beautiful.init('/home/ali/.config/awesome/theme/theme.lua')
+theme_path = os.getenv('HOME') .. '/.config/awesome/theme/theme.lua'
+beautiful.init(theme_path)
 
 -- This is used later as the default apps to run.
 terminal = 'termite'
 editor = os.getenv('EDITOR') or 'vim'
 editor_cmd = terminal .. ' -e ' .. editor
-browser = 'chromium'
+browser = 'google-chrome-stable'
 
 modkey = 'Mod4'
 
@@ -169,7 +170,7 @@ awful.screen.connect_for_each_screen(function(scr)
     items = {
       { 'awesome', scr.myawesomemenu, beautiful.awesome_icon },
       { 'terminal', terminal },
-      { browser,  browser },
+      { 'chrome',  browser },
       { 'shutdown', 'shutdown now' },
       { 'reboot', 'reboot' }
     }
@@ -252,7 +253,7 @@ awful.key({ modkey }, 'Return', function () awful.util.spawn(terminal) end),
 awful.key({ modkey }, 'a', function () awful.util.spawn('code') end),
 awful.key({ modkey }, 's', function () awful.util.spawn('slack') end),
 awful.key({ modkey }, 't', function () awful.util.spawn('telegram-dektop') end),
-awful.key({ modkey }, "l", function () os.execute("dm-tool switch-to-greeter") end),
+awful.key({ modkey }, 'l', function () os.execute("dm-tool switch-to-greeter") end),
 awful.key({ modkey }, 'space', function ()
   lang = lang + 1
   if lang == 1 then
@@ -373,5 +374,5 @@ client.connect_signal('manage', function (c, startup)
   end
 end)
 
-os.execute("xrandr --output DP-1 --auto --output HDMI-2 --auto --right-of DP-1")
+-- os.execute("xrandr --output DP-1 --auto --output HDMI-2 --auto --right-of DP-1")
 -- }}}

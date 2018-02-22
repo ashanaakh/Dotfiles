@@ -10,9 +10,13 @@ source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/go
 export GOBIN=$HOME/go/bin
 
+# Specific for awesome archlinux
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # PATH
 PATH="$HOME/.rbenv/bin:$PATH"
-PATH="/home/ali/.rbenv/shims:$PATH"
+PATH="$HOME/.rbenv/shims:$PATH"
 #PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 PATH="$GOBIN:$PATH"
 
@@ -26,7 +30,9 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 DOTFILES=$HOME/.dotfiles
 
 # Aliases
+## kubectl
 alias kc="kubectl"
+alias kuve="kubectl"
 
 # Updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
@@ -45,9 +51,6 @@ export PATH="$HOME/downloads/RubyMine-2017.3.1/bin:$PATH"
 # Completitions
 source <(kubectl completion zsh)
 source <(helm completion zsh)
-
-# export VAULT_ADDR=https://vault.bloomon.io
-# export VAULT_ADDR=https://vault.helioscloud.com
 
 # Terraform completion
 autoload -U +X bashcompinit && bashcompinit
