@@ -1,0 +1,37 @@
+[user]
+	name = Ali Shanaakh
+	email = ashanaakh@gmail.com
+	signingkey = AB7CBFC27372CB63
+[core]
+	editor = vim
+	excludesfile = /Users/ashanaakh/.gitignore
+[diff]
+    tool = default-difftool
+[color]
+	ui = auto
+[web]
+	browser = google-chrome
+[gpg]
+	program = /usr/local/bin/gpg
+[credential]
+	helper = osxkeychain
+[commit]
+	gpgsign = true
+[alias]
+	st = status
+ 	co = checkout
+ 	b = branch
+	f = fetch
+	m = merge
+	ps = push
+ 	r = remote
+	rb = rebase
+	re = reset
+ 	d = diff
+ 	a = add
+	ds = diff --staged
+	c = commit
+	aa = add --all
+	lg = log --oneline --graph
+[help]
+	autocorrect = 10
