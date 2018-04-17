@@ -8,7 +8,7 @@ local os  = { getenv = os.getenv }
 local theme = {}
 
 theme.dir          = os.getenv("HOME") .. "/.config/awesome/theme"
-theme.wallpaper    = theme.dir .. "/wallpaper.jpg"
+theme.wallpaper    = theme.dir .. "/wallpaper.png"
 theme.font         = "Roboto 14"
 theme.fg_normal    = "#D7D7D7"
 theme.fg_focus     = "#F4E02E"

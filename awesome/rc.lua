@@ -6,20 +6,7 @@ local naughty = require('naughty')
 local menubar = require('menubar')
 require('awful.autofocus')
 
-local tag_history_file = os.getenv('HOME') .. '/.local/share/awesome/tag_history'
-local tag_history = { io.open(tag_history_file, 'r'):read():match('([1-9]) ([1-9])') }
-
 awful.util.spawn('nitrogen --restore')
-
-function tag_history:update()
-  for scr in screen do
-    tag_history[scr.index] = scr.selected_tag.index
-  end
-
-  io.open(tag_history_file, 'w')
-  :write(table.concat(tag_history, ' '))
-  :close()
-end
 
 lang = 1
 
@@ -97,17 +84,14 @@ awful.button({ }, 3, awful.tag.viewtoggle),
 
 awful.button({ }, 1, function(t)
   t:view_only()
-  tag_history:update()
 end),
 
 awful.button({ }, 4, function(t)
   awful.tag.viewnext(t.screen)
-  tag_history:update()
 end),
 
 awful.button({ }, 5, function(t)
   awful.tag.viewprev(t.screen)
-  tag_history:update()
 end),
 
 awful.button({ modkey }, 1, function(t)
@@ -217,8 +201,6 @@ awful.screen.connect_for_each_screen(function(scr)
 }
   })
 
-  awful.tag.viewidx(tag_history[scr.index] - 1, scr.index)
-
   -- Mouse bindings
   root.buttons(
     awful.util.table.join(
@@ -231,12 +213,10 @@ end)
 globalkeys = awful.util.table.join(
 awful.key({ modkey }, 'Left', function ()
   awful.tag.viewprev()
-  tag_history:update()
 end),
 
 awful.key({ modkey }, 'Right', function ()
   awful.tag.viewnext()
-  tag_history:update()
 end),
 
 -- Screenshot
@@ -299,7 +279,6 @@ for i = 1, 9 do
 
   awful.key({ modkey }, '#' .. i + 9, function ()
     awful.tag.viewonly(awful.screen.focused().tags[i])
-    tag_history:update()
   end),
 
   awful.key({ modkey, 'Shift' }, '#' .. i + 9, function ()
@@ -374,5 +353,5 @@ client.connect_signal('manage', function (c, startup)
   end
 end)
 
--- os.execute("xrandr --output DP-1 --auto --output HDMI-2 --auto --right-of DP-1")
--- }}}
+os.execute('xset r rate 200 60')
+

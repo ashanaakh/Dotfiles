@@ -11,13 +11,12 @@ export GOPATH=$HOME/go
 export GOBIN=$HOME/go/bin
 
 # Specific for awesome archlinux
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+export LC_ALL=en_GB.UTF-8
+export LANG=en_GB.UTF-8
 
 # PATH
 PATH="$HOME/.rbenv/bin:$PATH"
 PATH="$HOME/.rbenv/shims:$PATH"
-#PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 PATH="$GOBIN:$PATH"
 
 # Default editor
@@ -35,13 +34,13 @@ alias kc="kubectl"
 alias kuve="kubectl"
 
 # Updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
-  source "$HOME/google-cloud-sdk/path.zsh.inc";
+if [ -f "$HOME/root/bin/google-cloud-sdk/path.zsh.inc" ]; then
+  source "$HOME/root/bin/google-cloud-sdk/path.zsh.inc";
 fi
 
 # Enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
-  source "$HOME/google-cloud-sdk/completion.zsh.inc";
+if [ -f "$HOME/root/bin/google-cloud-sdk/completion.zsh.inc" ]; then
+  source "$HOME/root/bin/google-cloud-sdk/completion.zsh.inc";
 fi
 
 # Add Kite binary to PATH to use it like gem
