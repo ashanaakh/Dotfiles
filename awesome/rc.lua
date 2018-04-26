@@ -219,21 +219,27 @@ awful.key({ modkey }, 'Right', function ()
   awful.tag.viewnext()
 end),
 
+-- Fix with deepin screenshots
 -- Screenshot
 awful.key({ modkey, 'Control' }, 's', function ()
-  awful.util.spawn('xsnap -file /home/ali/misc/media/pictures/screenshots/screenshot-' .. os.time() .. '.png')
+  awful.util.spawn('xsnap -file ' .. os.getenv('HOME') .. '/img-' .. os.time() .. '.png')
 end),
 
 awful.key({ modkey }, ',', function () awful.screen.focus_relative( 1) end),
 awful.key({ modkey }, '.', function () awful.screen.focus_relative(-1) end),
 
--- Standard program
 awful.key({ modkey, 'Control' }, 'f', function () awful.util.spawn(browser) end),
-awful.key({ modkey }, 'Return', function () awful.util.spawn(terminal) end),
-awful.key({ modkey }, 'a', function () awful.util.spawn('code') end),
-awful.key({ modkey }, 's', function () awful.util.spawn('slack') end),
-awful.key({ modkey }, 't', function () awful.util.spawn('telegram-dektop') end),
-awful.key({ modkey }, 'l', function () os.execute("dm-tool switch-to-greeter") end),
+awful.key({ modkey, 'Control' }, 'r', function () awesome.restart()         end),
+
+awful.key({ modkey, 'Shift' }, 'q', function () awesome.quit() end),
+
+awful.key({ modkey }, 'o', function() awful.client.movetoscreen()              end),
+awful.key({ modkey }, 'p', function() menubar.show()                           end),
+awful.key({ modkey }, 'a', function () awful.util.spawn('code')                end),
+awful.key({ modkey }, 's', function () awful.util.spawn('slack')               end),
+awful.key({ modkey }, 't', function () awful.util.spawn('telegram-dektop')     end),
+awful.key({ modkey }, 'l', function () os.execute('dm-tool switch-to-greeter') end),
+awful.key({ modkey }, 'Return', function () awful.util.spawn(terminal)         end),
 awful.key({ modkey }, 'space', function ()
   lang = lang + 1
   if lang == 1 then
@@ -245,11 +251,6 @@ awful.key({ modkey }, 'space', function ()
     lang = 0
   end
 end),
-
-awful.key({ modkey, 'Control' }, 'r', awesome.restart),
-awful.key({ modkey, 'Shift' }, 'q', awesome.quit),
-awful.key({ modkey }, 'o', awful.client.movetoscreen),
-
 awful.key({ modkey }, 'n', function ()
   if client.focus then
     client.focus.minimized = true
@@ -262,12 +263,20 @@ end),
 awful.key({ modkey }, 'r', function () awful.screen.focused().mypromptbox:run() end)
 )
 
+-- Window Mangement
+awful.key({ modkey,           }, 'j', function () awful.tag.incmwfact( 0.05)    end),
+awful.key({ modkey,           }, 'h', function () awful.tag.incmwfact(-0.05)    end),
+awful.key({ modkey, 'Shift'   }, 'h', function () awful.tag.incnmaster( 1)      end),
+awful.key({ modkey, 'Shift'   }, 'j', function () awful.tag.incnmaster(-1)      end),
+awful.key({ modkey, 'Control' }, 'h', function () awful.tag.incncol( 1)         end),
+awful.key({ modkey, 'Control' }, 'j', function () awful.tag.incncol(-1)         end)
+
 -- Keys for focused client
 clientkeys = awful.util.table.join(
   awful.key({ modkey }, 'f', function (c) c.fullscreen = not c.fullscreen end),
-  awful.key({ modkey }, 'q', function (c) c:kill() end),
-  awful.key({ modkey }, 't', function (c) c.ontop = not c.ontop end),
-  awful.key({ modkey }, 'm', function (c) c.maximized = not c.maximized end)
+  awful.key({ modkey }, 'q', function (c) c:kill()                        end),
+  awful.key({ modkey }, 't', function (c) c.ontop = not c.ontop           end),
+  awful.key({ modkey }, 'm', function (c) c.maximized = not c.maximized   end)
 )
 
 -- Bind all key numbers to tags.
