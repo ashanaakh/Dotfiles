@@ -264,19 +264,21 @@ awful.key({ modkey }, 'r', function () awful.screen.focused().mypromptbox:run() 
 )
 
 -- Window Mangement
-awful.key({ modkey,           }, 'j', function () awful.tag.incmwfact( 0.05)    end),
-awful.key({ modkey,           }, 'h', function () awful.tag.incmwfact(-0.05)    end),
-awful.key({ modkey, 'Shift'   }, 'h', function () awful.tag.incnmaster( 1)      end),
-awful.key({ modkey, 'Shift'   }, 'j', function () awful.tag.incnmaster(-1)      end),
-awful.key({ modkey, 'Control' }, 'h', function () awful.tag.incncol( 1)         end),
-awful.key({ modkey, 'Control' }, 'j', function () awful.tag.incncol(-1)         end)
+awful.key({ modkey }, 'j', function () awful.tag.incmwfact(0.05) end)
+awful.key({ modkey }, 'h', function () awful.tag.incmwfact(-0.05) end)
+
+awful.key({ modkey, 'Shift' }, 'h', function () awful.tag.incnmaster(1) end)
+awful.key({ modkey, 'Shift' }, 'j', function () awful.tag.incnmaster(-1) end)
+
+awful.key({ modkey, 'Control' }, 'h', function () awful.tag.incncol(1) end)
+awful.key({ modkey, 'Control' }, 'j', function () awful.tag.incncol(-1) end)
 
 -- Keys for focused client
 clientkeys = awful.util.table.join(
   awful.key({ modkey }, 'f', function (c) c.fullscreen = not c.fullscreen end),
-  awful.key({ modkey }, 'q', function (c) c:kill()                        end),
-  awful.key({ modkey }, 't', function (c) c.ontop = not c.ontop           end),
-  awful.key({ modkey }, 'm', function (c) c.maximized = not c.maximized   end)
+  awful.key({ modkey }, 'q', function (c) c:kill() end),
+  awful.key({ modkey }, 't', function (c) c.ontop = not c.ontop end),
+  awful.key({ modkey }, 'm', function (c) c.maximized = not c.maximized end)
 )
 
 -- Bind all key numbers to tags.

@@ -9,7 +9,7 @@ local theme = {}
 
 theme.dir          = os.getenv("HOME") .. "/.config/awesome/theme"
 theme.wallpaper    = theme.dir .. "/wallpaper.png"
-theme.font         = "Roboto 18"
+theme.font         = "Roboto 10"
 theme.fg_normal    = "#D7D7D7"
 theme.fg_focus     = "#F4E02E"
 theme.fg_urgent    = "#CC9393"
@@ -40,7 +40,7 @@ theme.mouse_finder_color = "#CC9393"
 -- {{{ Menu
 -- Variables set for theming the menu:
 theme.menu_height       = dpi(30)
-theme.menu_font         = "Roboto 14"
+theme.menu_font         = "Roboto 10"
 theme.menu_width        = dpi(250)
 theme.menu_border_width = dpi(1)
 theme.menu_useless_gap  = dpi(0)
