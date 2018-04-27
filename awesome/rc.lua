@@ -363,4 +363,4 @@ client.connect_signal('manage', function (c, startup)
 end)
 
 os.execute('xset r rate 200 60')
-
+os.execute('nitrogen --restore')

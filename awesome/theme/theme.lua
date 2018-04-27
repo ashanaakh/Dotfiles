@@ -9,7 +9,7 @@ local theme = {}
 
 theme.dir          = os.getenv("HOME") .. "/.config/awesome/theme"
 theme.wallpaper    = theme.dir .. "/wallpaper.png"
-theme.font         = "Roboto 14"
+theme.font         = "Roboto 18"
 theme.fg_normal    = "#D7D7D7"
 theme.fg_focus     = "#F4E02E"
 theme.fg_urgent    = "#CC9393"
@@ -18,7 +18,6 @@ theme.bg_focus     = "#70B4A980"
 theme.fg_urgent    = "#CC9393"
 theme.bg_urgent    = "#3F3F3F80"
 theme.bg_systray   = theme.bg_normal
-theme.taglist_font = "Roboto 14"
 
 -- {{{ Borders
 theme.useless_gap   = dpi(0)
@@ -55,6 +54,7 @@ theme.menu_bg_focus     = "#1A78D0"
 theme.taglist_squares_sel    = theme.dir .. "/icons/square_sel.png"
 theme.taglist_squares_unsel  = theme.dir .. "/icons/square_unsel.png"
 theme.taglist_squares_resize = "true"
+theme.taglist_font = "Roboto 16"
 -- }}}
 --
 
