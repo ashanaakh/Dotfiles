@@ -1,5 +1,6 @@
 local awful = require('awful')
 local gears = require('gears')
+local vicious = require("vicious")
 local wibox = require('wibox')
 local beautiful = require('beautiful')
 local naughty = require('naughty')
@@ -51,6 +52,16 @@ browser = 'google-chrome-stable'
 modkey = 'Mod4'
 
 mykeyboardlayout = awful.widget.keyboardlayout()
+
+-- CPU usage widget
+cpuwidget = awful.widget.graph()
+-- Graph properties
+cpuwidget:set_width(50)
+cpuwidget:set_background_color("#494B4F")
+cpuwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#88A175"},
+                    {1, "#AECF96" }}})
+-- Register widget
+vicious.register(cpuwidget, vicious.widgets.cpu, "$1")
 
 -- Default modkey.
 awful.layout.layouts = {
@@ -195,6 +206,7 @@ awful.screen.connect_for_each_screen(function(scr)
   scr.mytasklist, -- Middle widget
   { -- Right widgets
   layout = wibox.layout.fixed.horizontal,
+  cpuwidget,
   wibox.widget.systray(),
   mykeyboardlayout,
   scr.mytextclock
@@ -222,7 +234,7 @@ end),
 -- Fix with deepin screenshots
 -- Screenshot
 awful.key({ modkey, 'Control' }, 's', function ()
-  awful.util.spawn('xsnap -file ' .. os.getenv('HOME') .. '/img-' .. os.time() .. '.png')
+  awful.util.spawn('deepin-screenshot -s ' .. os.getenv('HOME') .. '/junk/img-' .. os.time() .. '.png')
 end),
 
 awful.key({ modkey }, ',', function () awful.screen.focus_relative( 1) end),
@@ -263,15 +275,15 @@ end),
 awful.key({ modkey }, 'r', function () awful.screen.focused().mypromptbox:run() end)
 )
 
--- Window Mangement
-awful.key({ modkey }, 'j', function () awful.tag.incmwfact(0.05) end)
-awful.key({ modkey }, 'h', function () awful.tag.incmwfact(-0.05) end)
+awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end)
+awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end)
+awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end)
+awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end)
+awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end)
+awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end)
+awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end)
+awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end)
 
-awful.key({ modkey, 'Shift' }, 'h', function () awful.tag.incnmaster(1) end)
-awful.key({ modkey, 'Shift' }, 'j', function () awful.tag.incnmaster(-1) end)
-
-awful.key({ modkey, 'Control' }, 'h', function () awful.tag.incncol(1) end)
-awful.key({ modkey, 'Control' }, 'j', function () awful.tag.incncol(-1) end)
 
 -- Keys for focused client
 clientkeys = awful.util.table.join(
