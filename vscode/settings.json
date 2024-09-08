@@ -1,0 +1,42 @@
+{
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  // The number of spaces a tab is equal to.
+  "editor.tabSize": 4,
+  // Insert spaces when pressing Tab.
+  "editor.insertSpaces": true,
+  // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
+  "editor.detectIndentation": true,
+  "editor.rulers": [
+    120
+  ],
+  // Ensure the Go language server is enabled
+  "go.useLanguageServer": true,
+  // Configure gopls, the Go language server
+  "gopls": {
+    "formatting.gofumpt": true,
+    "formatting.local": "pkg.hiveon.dev/",
+    "ui.semanticTokens": true,
+    "ui.completion.usePlaceholders": false,
+    // This ensures that gopls doesn't interfere with goimports
+    "analyses": {
+      // "staticcheck": true,
+      // "unusedparams": true,
+      // "shadow": true
+    },
+    // "staticcheck": true,
+    // "shadow": true,
+    // "annotations": {"bounds":true,"escape":true,"inline":true,"nil":true},
+  },
+  // Change the linting tool to be golangci-lint
+  "go.lintTool": "golangci-lint",
+  "go.lintOnSave": "workspace",
+  "go.lintFlags": [
+    "--fast"
+  ],
+  "git.openRepositoryInParentFolders": "never",
+  "explorer.confirmDelete": false,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "trailing-spaces.trimOnSave": true
+}

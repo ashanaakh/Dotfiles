@@ -1,27 +1,24 @@
 # Path to your oh-my-zsh installation.
-ZSH_THEME="robbyrussell"
+export ZSH="$HOME/.oh-my-zsh"
+export ZSH_THEME="robbyrussell"
 
-plugins=(zsh-syntax-highlighting git)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
-alias kc="kubectl"
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Terraform completion
-autoload -U +X bashcompinit && bashcompinit
-complete -C /usr/local/bin/terraform terraform
+export LANG=en_US.UTF-8
+export EDITOR="zed"
+export DOTFILES="$HOME/.dotfiles"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/root/bin/google-cloud-sdk/path.zsh.inc" ]; then
-  source "/$HOME/root/bin/google-cloud-sdk/path.zsh.inc";
-fi
+# Hiveon golang settings.
+export GOPATH="$HOME/go"
+export GOSUMDB="sum.golang.org"
+export GOPROXY="https://proxy.golang.org,direct"
+export GONOPROXY="gitlab.com/hiveon/*,pkg.hiveon.dev/*"
+export GOPRIVATE=",gitlab.com/hiveon/*,pkg.hiveon.dev/*"
+export GONOSUMDB=",gitlab.com/hiveon/*,pkg.hiveon.dev/*"
 
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/root/bin/google-cloud-sdk/completion.zsh.inc" ];then
-  source "/$HOME/root/bin/google-cloud-sdk/completion.zsh.inc";
-fi
-
-# Completitions
-source <(kubectl completion zsh)
-source <(helm completion zsh)
-
+# Add go binaries to the path.
+export PATH="$GOPATH/bin:$PATH"

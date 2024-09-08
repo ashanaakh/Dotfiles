@@ -1,6 +1,6 @@
 [user]
 	name = Ali Shanaakh
-	email = ashanaakh@gmail.com
+	email = ali@hiveon.net
 
 [core]
 	editor = vim
@@ -10,6 +10,9 @@
 
 [web]
 	browser = google-chrome
+
+[url "ssh://git@gitlab.com/"]
+    insteadOf = https://gitlab.com/
 
 [alias]
 	st = status

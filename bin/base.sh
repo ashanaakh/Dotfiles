@@ -13,3 +13,4 @@ for file in ${files[@]}; do
   ln -s "$PWD/$file" "$HOME/.$file"
 done
 
+ln -s "$PWD/vscode/settings.json" "$HOME/.vscode/settings.json"
